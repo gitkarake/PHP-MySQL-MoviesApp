@@ -1,0 +1,56 @@
+.add-movie form {
+	margin: 20px auto;
+	width: 400px;
+	padding: 25px;
+	background-color: var(--bg-midnight-color);
+	border-radius: 0.5rem;
+}
+.add-movie form h2 {
+	text-align: center;
+	margin: 5px 0 30px;
+	font-size: 35px;
+}
+.add-movie form .genres-container {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	padding: 10px;
+	border: 3px solid var(--bg-dark-color);
+	background-color: var(--primary-color);
+}
+.add-movie form .genres-container label {
+	font-weight: bold;
+	font-size: 15px;
+	margin: 0;
+	padding: 6px 10px;
+	border-radius: 50rem;
+}
+.add-movie form .genres-container input[type="checkbox"] {
+	display: none;
+}
+.add-movie form .optional {
+	position: relative;
+	width: fit-content;
+}
+.add-movie form .optional::after {
+	content: "optional";
+	position: absolute;
+	font-size: 14px;
+	color: var(--bg-midsun-color);
+	top: 50%;
+	transform: translate(100%, -50%);
+	right: -5px;
+}
+.add-movie form input[type="submit"] {
+	margin: 30px auto 0;
+	width: fit-content;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.add-movie form input[type="submit"]:hover {
+	border-color: var(--primary-color);
+}
+.checkbox-holder.active .btn {
+	background-color: var(--bg-dark-color);
+	color: var(--light-color);
+}

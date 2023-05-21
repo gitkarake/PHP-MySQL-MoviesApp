@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	cursor: default;
+}
+
+.btn {
+	background-color: var(--primary-color);
+	padding: 8px 12px;
+	border-radius: 0.3rem;
+	font-weight: 700;
+	color: var(--bg-dark-color);
+	font-size: 18px;
+	transition: background-color 0.4s, color 0.4s, border-color 0.4s;
+	border: 2px solid var(--bg-dark-color);
+	display: block;
+	font-family: var(--primary-font);
+}
+
+.btn:hover {
+	background-color: var(--bg-dark-color);
+	color: var(--light-color);
+	cursor: pointer;
+}
+
+:root {
+	--primary-color: #fbf446;
+	--secondray-color: #ed483c;
+	--bg-dark-color: #0f0f0f;
+	--bg-midnight-color: #242424;
+	--bg-light-color: #efefef;
+	--bg-midsun-color: #c1c1c1;
+	--light-color: #fff;
+	--primary-font: "Quicksand";
+}
+
+body {
+	font-family: var(--primary-font), sans-serif;
+	background-color: var(--bg-dark-color);
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+ul {
+	list-style: none;
+}
+
+form {
+	cursor: default;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+textarea {
+	display: block;
+	padding: 7px 10px;
+	width: 100%;
+	color: var(--bg-dark-color);
+	outline: none;
+	font-family: var(--primary-font);
+	font-weight: 500;
+	font-size: 16px;
+}
+
+textarea {
+	height: 130px;
+	resize: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+label {
+	font-size: 18px;
+}
+
+.input-holder {
+	margin-bottom: 10px;
+}
+
+.input-holder label {
+	margin-bottom: 5px;
+	display: block;
+	font-size: 20px;
+}
+
+/* file input */
+input[type="file"] {
+	display: block;
+	padding: 3px;
+	background-color: var(--light-color);
+	color: var(--bg-dark-color);
+	font-family: var(--primary-font);
+	width: 100%;
+}
+input[type="file"]::file-selector-button {
+	margin-right: 20px;
+	border: none;
+	/* background: var(--primary-	color); */
+	font-family: var(--primary-font);
+	padding: 10px 20px;
+	color: #fff;
+	cursor: pointer;
+	background: var(--bg-midnight-color);
+}
+
+input[type="file"]::file-selector-button:hover {
+	transition: background-color 0.2s ease-in-out;
+	background-color: var(--bg-dark-color);
+}
+
+.navbar {
+	background-color: #ededed;
+	width: 100%;
+	padding: 15px 0;
+	cursor: default;
+	box-shadow: rgba(0, 0, 0, 24.5) 0px 11px 12px;
+}
+
+.navbar .nav-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.navbar .logo a {
+	font-weight: 400;
+}
+
+.navbar ul.links {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.navbar .links li a {
+	font-weight: 700;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 50px auto;
+}

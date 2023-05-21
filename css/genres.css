@@ -1,0 +1,184 @@
+.genres-page {
+	display: flex;
+	flex-direction: column;
+	/* gap: 70px; */
+}
+
+.genres-page h1 {
+	margin: 10px auto 70px;
+	font-size: 36px;
+	font-weight: 400;
+	border-bottom: 1px solid var(--primary-color);
+	padding: 0 0 5px;
+	letter-spacing: 3px;
+	cursor: default;
+}
+
+.sorting {
+	display: block;
+	margin: 20px 0 50px 20px;
+}
+
+select {
+	appearance: none;
+	padding: 0.2rem 0.3rem;
+	font-size: inherit;
+	cursor: pointer;
+	outline: none;
+	background-color: var(--bg-midnight-color);
+	border-radius: 0.2rem;
+	transition: border-color 0.2s ease;
+	border: 1px solid var(--bg-midsun-color);
+	font-family: var(--primary-font);
+	font-weight: 500;
+	position: relative;
+}
+select:hover {
+	border-color: #aaa;
+}
+select:focus {
+	border-color: var(--primary-color);
+}
+select:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.movies {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr); /* Four columns */
+	grid-auto-rows: 1fr; /* Automatic row height */
+	grid-gap: 30px; /* Gap between grid items */
+	margin: 20px auto;
+}
+
+.movies .box {
+	background: var(--bg-midnight-color);
+	padding-bottom: 20px;
+	border-radius: 0.5rem;
+	overflow: hidden;
+	cursor: default;
+}
+
+.movies .box .img img {
+	height: 400px;
+}
+.movies .box .img img {
+	width: 100%;
+	object-fit: cover;
+}
+
+.movies .box .content {
+	padding: 10px 20px;
+}
+
+.movies .box h2,
+.movies .box ul.genres {
+	margin-bottom: 5px;
+}
+
+.movies .box ul.genres {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.movies .box ul h4 {
+	margin-right: 5px;
+	font-weight: 500;
+}
+
+.movies .box ul.genres li:not(:last-child) {
+	margin-right: 15px;
+}
+
+.movies .box ul.genres li:not(:last-child) a::after {
+	content: "";
+	background-color: var(--bg-light-color);
+	position: absolute;
+	width: 3px;
+	height: 3px;
+	right: -10px;
+	border-radius: 50rem;
+	top: 50%;
+	transform: translate(-50%);
+}
+
+.movies .box ul.genres a {
+	color: var(--bg-light-color);
+	position: relative;
+}
+
+.movies .box ul.rating {
+	display: flex;
+	gap: 2px;
+}
+.movies .box ul.rating span.rate {
+	font-size: 14px;
+	color: var(--primary-color);
+	margin-right: 2px;
+}
+.movies .box ul.rating li {
+	display: flex;
+	align-items: center;
+}
+.movies .box ul.rating i.fa-star {
+	font-size: 10px;
+	color: var(--primary-color);
+}
+.movies .box a.details {
+	color: var(--bg-light-color);
+	margin: 20px 0 0;
+	display: block;
+}
+
+.pagination {
+	display: flex;
+	gap: 12px;
+	margin: 30px auto 0;
+}
+.pagination ul.pages {
+	display: flex;
+	gap: 5px;
+}
+
+.pagination a.active {
+	cursor: default;
+	opacity: 0.9;
+	transition: none;
+	background: var(--bg-dark-color);
+	color: var(--light-color);
+	border: 2px solid var(--primary-color);
+	pointer-events: none;
+}
+
+.pagination a.active i {
+	color: var(--light-color);
+}
+
+.pagination a {
+	width: 35px;
+	height: 35px;
+	background-color: var(--primary-color);
+	color: var(--bg-dark-color);
+	border: 1px solid var(--bg-dark-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0.2rem;
+	font-weight: bold;
+	transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+.pagination a i {
+	color: var(--bg-dark-color);
+	font-size: 22px;
+	transition: color 0.3s;
+}
+
+.pagination a:hover {
+	background-color: var(--bg-dark-color);
+	color: var(--bg-light-color);
+	border: 2px solid var(--primary-color);
+}
+.pagination a:hover i {
+	color: var(--bg-light-color);
+}
