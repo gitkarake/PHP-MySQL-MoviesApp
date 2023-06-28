@@ -50,6 +50,23 @@ select:disabled {
 	grid-auto-rows: 1fr; /* Automatic row height */
 	grid-gap: 30px; /* Gap between grid items */
 	margin: 20px auto;
+	padding: 0 20px;
+}
+
+@media (max-width: 1200px) {
+	.movies {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+@media (max-width: 992px) {
+	.movies {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (max-width: 767px) {
+	.movies {
+		grid-template-columns: repeat(1, 1fr);
+	}
 }
 
 .movies .box {

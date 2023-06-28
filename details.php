@@ -13,13 +13,16 @@ if (!empty(explode('=', $_SERVER['QUERY_STRING'])[0]) && explode('=', $_SERVER['
   $stmt = $pdo->prepare('SELECT * FROM movies WHERE id = ?');
   $stmt->execute([$id]);
   $movie = $stmt->fetch();
-} else {
+}
+else {
   header('Location: index.php');
 }
 ?>
 <div class="container">
   <div class="details-page">
-    <h2><?php echo $movie['name'] ?></h2>
+    <h2>
+      <?php echo $movie['name'] ?>
+    </h2>
     <div class="details">
       <div class="img">
         <img src="<?php echo $movie['img'] ?>" alt="">
@@ -31,22 +34,28 @@ if (!empty(explode('=', $_SERVER['QUERY_STRING'])[0]) && explode('=', $_SERVER['
             <?php
             $genres = json_decode($movie['genres']);
             foreach ($genres as $gen) {
-              echo "<li><a class='btn' href='genres/$gen'>$gen</a></li>";
+              echo "<li><a class='btn' href='genres.php?genres=$gen'>$gen</a></li>";
             }
             ?>
           </ul>
         </div>
         <div class="rating">
           <h3>Rating: </h3>
-          <span class='value'><?php echo $movie['rating'] ?></span>
+          <span class='value'>
+            <?php echo $movie['rating'] ?>
+          </span>
         </div>
         <div class="story-line">
           <h3>Story Line: </h3>
-          <span class='value'><?php echo $movie['storyline'] ?></span>
+          <span class='value'>
+            <?php echo $movie['storyline'] ?>
+          </span>
         </div>
         <div class="release-date">
           <h3>Release Date: </h3>
-          <span class='value'><?php echo $movie['release_date'] ?></span>
+          <span class='value'>
+            <?php echo $movie['release_date'] ?>
+          </span>
         </div>
         <?php if ($movie['imdb_link']) { ?>
           <div class="imdb-link">

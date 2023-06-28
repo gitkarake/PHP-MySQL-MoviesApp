@@ -1,0 +1,10 @@
+.about-page h1 {
+	margin: 10px 0 30px;
+	font-size: 36px;
+	font-weight: 400;
+	border-bottom: 1px solid var(--primary-color);
+	padding: 0 0 5px;
+	letter-spacing: 3px;
+	cursor: default;
+	width: fit-content;
+}

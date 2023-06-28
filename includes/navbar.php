@@ -5,11 +5,11 @@
     </div>
     <ul class="links">
       <?php if (!(isset($_SESSION['fileName']) && $_SESSION['fileName'] === 'add-movie')) {
-      ?>
-      <li><a class="btn" href="add-movie.php">Add Movie</a></li>
-      <?php
+        ?>
+        <li><a class="btn" href="add-movie.php">Add Movie</a></li>
+        <?php
       } ?>
-      <li><a href="/about">About</a></li>
+      <li><a href="about.php">About</a></li>
     </ul>
   </div>
 </div>

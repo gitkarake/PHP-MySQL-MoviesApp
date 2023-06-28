@@ -1,3 +1,6 @@
+.container {
+	margin: 50px auto 0;
+}
 .details-page {
 	box-shadow: rgba(0, 0, 0, 0.24) 2px 3px 5px;
 }
@@ -61,4 +64,26 @@
 	color: var(--primary-color);
 	font-weight: bold;
 	font-size: 18px;
+}
+
+@media (max-width: 767px) {
+	.details-page {
+		padding: 30px 30px 60px 30px;
+	}
+	.details {
+		flex-direction: column;
+	}
+	.details-page .img img {
+		padding: 30px 30px 0;
+	}
+	.details-page .content {
+		padding: 30px 15px 30px 15px;
+	}
+	.details-page .content > div {
+		gap: 10px;
+	}
+	.details-page .content span.value a {
+		line-break: anywhere;
+		line-height: 1.5;
+	}
 }

@@ -10,21 +10,13 @@ if (isset($_POST['submit'])) {
   if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
     $file = $_FILES['file'];
   }
-  echo '<pre>';
-  var_dump($file);
-  echo '</pre>';
-
-
 
   $isValidImage = validateImage($file);
-  echo '<pre>';
-  var_dump($_POST);
-  echo '</pre>';
-
 
   if (!$isValidImage['success']) {
     $error = $isValidImage['msg'];
-  } else {
+  }
+  else {
     // Specify the destination folder to save the uploaded file
     $destinationFolder = 'upload/';
 
@@ -46,7 +38,8 @@ if (isset($_POST['submit'])) {
       $stmt->execute([$name, $release_date, $rating, $storyline, $img, $genres, $imdb_link]);
 
       header('Location: index.php');
-    } else {
+    }
+    else {
       $error = "somthing went wrong try again later.";
     }
   }
@@ -57,9 +50,6 @@ if (isset($_POST['submit'])) {
   <div class="add-movie">
     <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" enctype="multipart/form-data">
       <h2>Add Movie</h2>
-      <?php if (isset($error)) {
-        echo "<div class='error'>$error</div>";
-      } ?>
       <div class="input-holder">
         <label for="name">Name:</label>
         <input type="text" name="name" id="name" required>
@@ -120,6 +110,9 @@ if (isset($_POST['submit'])) {
             <input type="checkbox" name="genres[]" value="Thriller" id="checkboxThriller">
           </div>
         </div>
+        <?php if (isset($error)) {
+          echo "<div class='error'>$error</div>";
+        } ?>
       </div>
       <div class="input-holder">
         <label for="storyline">Storyline:</label>
@@ -138,44 +131,3 @@ if (isset($_POST['submit'])) {
   </div>
 </div>
 <?php include './includes/footer.php'; ?>
-
-<!-- 
-
-array(7) {
-  ["name"]=>
-  string(6) "asdasd"
-  ["release-date"]=>
-  string(10) "1999-11-11"
-  ["rating"]=>
-  string(1) "1"
-  ["genres"]=>
-  array(2) {
-    [0]=>
-    string(9) "Adventure"
-    [1]=>
-    string(7) "Fantasy"
-  }
-  ["storyline"]=>
-  string(6) "asdasd"
-  ["imdb"]=>
-  string(0) ""
-  ["submit"]=>
-  string(6) "Submit"
-}
-
-array(6) {
-  ["name"]=>
-  string(12) "download.jpg"
-  ["full_path"]=>
-  string(12) "download.jpg"
-  ["type"]=>
-  string(10) "image/jpeg"
-  ["tmp_name"]=>
-  string(24) "C:\xampp\tmp\php77E7.tmp"
-  ["error"]=>
-  int(0)
-  ["size"]=>
-  int(123040)
-}
-
- -->
